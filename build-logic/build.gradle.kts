@@ -11,4 +11,5 @@ dependencies {
     implementation(libs.indraPublishing)
     implementation(libs.licenser)
     implementation(libs.shadow)
+    implementation(libs.kotlin)
 }

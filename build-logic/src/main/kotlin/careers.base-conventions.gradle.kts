@@ -1,10 +1,10 @@
 import net.kyori.indra.IndraExtension
-import org.cadixdev.gradle.licenser.header.HeaderStyle
 
 plugins {
     `java-library`
     id("net.kyori.indra")
     id("org.cadixdev.licenser")
+    kotlin("jvm")
 }
 
 configure<IndraExtension> {

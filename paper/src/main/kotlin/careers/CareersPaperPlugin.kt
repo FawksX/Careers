@@ -20,4 +20,5 @@ package dev.fawks.careers
 import org.bukkit.plugin.java.JavaPlugin
 
 class CareersPaperPlugin : JavaPlugin() {
+
 }

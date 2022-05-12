@@ -6,11 +6,14 @@ plugins {
 
 dependencies {
     paperDevBundle("1.18.2-R0.1-SNAPSHOT")
-    compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
 
     implementation(project(":careers-common"))
 
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.20")
+    implementation(libs.stdlib)
+
+    implementation(libs.cloudPaper)
+    implementation(libs.cloudAnnotations)
+    implementation(libs.cloudExtras)
 }
 
 tasks {

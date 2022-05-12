@@ -8,10 +8,28 @@
   "versions": {
     "indra": "2.1.1",
     "licenser": "0.6.1",
-    "shadow": "7.1.2"
+    "shadow": "7.1.2",
+    "cloud": "1.6.2",
+    "kotlin": "1.6.20",
+    "adventure": "4.10.1"
   },
 
   "dependencies": {
+    "kotlin": {
+      "group": "org.jetbrains.kotlin",
+      "name": "kotlin-gradle-plugin",
+      "version": {
+        "ref": "kotlin"
+      }
+    },
+    "stdlib": {
+      "group": "org.jetbrains.kotlin",
+      "name": "kotlin-stdlib-jdk8",
+      "version": {
+        "ref": "kotlin"
+      }
+    },
+
     "indraCommon": {
       "group": "net.kyori",
       "name": "indra-common",
@@ -38,6 +56,57 @@
       "name": "shadow",
       "version": {
         "ref": "shadow"
+      }
+    },
+
+
+    "cloudCore": {
+      "group": "cloud.commandframework",
+      "name": "cloud-core",
+      "version": {
+        "ref": "cloud"
+      }
+    },
+    "cloudPaper": {
+      "group": "cloud.commandframework",
+      "name": "cloud-paper",
+      "version": {
+        "ref": "cloud"
+      }
+    },
+    "cloudAnnotations": {
+      "group": "cloud.commandframework",
+      "name": "cloud-annotations",
+      "version": {
+        "ref": "cloud"
+      }
+    },
+    "cloudExtras": {
+      "group": "cloud.commandframework",
+      "name": "cloud-minecraft-extras",
+      "version": {
+        "ref": "cloud"
+      }
+    },
+
+    "slf4j": {
+      "group": "org.slf4j",
+      "name": "slf4j-api",
+      "version": "1.8.0-beta4"
+    },
+
+    "adventureApi": {
+      "group": "net.kyori",
+      "name": "adventure-api",
+      "version": {
+        "ref": "adventure"
+      }
+    },
+    "adventureMiniMessage": {
+      "group": "net.kyori",
+      "name": "adventure-text-minimessage",
+      "version": {
+        "ref": "adventure"
       }
     }
   }
