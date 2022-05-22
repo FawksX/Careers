@@ -57,7 +57,8 @@ fun parse(text: String, vararg placeholders: Any): Component {
     return miniMessage().deserialize(text).decoration(TextDecoration.ITALIC, false)
 }
 
-fun message(audience: Audience, message: String, placeholders: Array<out Any>) = message(audience, listOf(message), placeholders)
+fun message(audience: Audience, message: String, placeholders: Array<out Any>) =
+    message(audience, listOf(message), placeholders)
 
 fun message(audience: Audience, message: List<String>, placeholders: Array<out Any>) {
     message.forEach {
@@ -69,6 +70,6 @@ fun deserialize(message: String): Component {
     return miniMessage().deserialize(message).decoration(TextDecoration.ITALIC, false)
 }
 
-fun miniMessage() : MiniMessage {
+fun miniMessage(): MiniMessage {
     return MINIMESSAGE
 }

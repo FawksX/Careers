@@ -74,7 +74,10 @@ abstract class AbstractCommandManager<C : Audience>(
             .withHandler(MinecraftExceptionHandler.ExceptionType.INVALID_SYNTAX, INVALID_SYNTAX_FUNCTION)
             .withDecorator(
                 getPrefix()::append
-            ).apply(cloudCommandManager, mapAudience()) // TODO: 12/05/2022 possibly implement wrapper here so commands can be abstracted away from platforms
+            ).apply(
+                cloudCommandManager,
+                mapAudience()
+            ) // TODO: 12/05/2022 possibly implement wrapper here so commands can be abstracted away from platforms
 
 
         this.annotationParser = AnnotationParser(
@@ -138,6 +141,6 @@ abstract class AbstractCommandManager<C : Audience>(
     abstract fun registerCommandManager(): CommandManager<C>
 
     // TODO: 12/05/2022 Implement this instead of leaving it up to implementing class
-    abstract fun getPrefix() : Component
+    abstract fun getPrefix(): Component
 
 }

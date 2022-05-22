@@ -1,3 +1,20 @@
+/*
+ * Copyright (C) 2022 Careers Contributors
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package dev.fawks.careers.util.message
 
 import net.kyori.adventure.audience.Audience
@@ -27,34 +44,34 @@ class FancyMessage private constructor(
 ) : Serializable {
 
     companion object {
-        fun of(message: String) : FancyMessage = FancyMessage(message)
-        fun builder() : Builder = Builder()
+        fun of(message: String): FancyMessage = FancyMessage(message)
+        fun builder(): Builder = Builder()
     }
 
     private constructor(message: String) : this(listOf(message), null, null, null, null, null)
 
     fun send(audience: Audience, vararg placeholders: Any) {
 
-        if(message.isNotEmpty()) {
+        if (message.isNotEmpty()) {
             message(audience, message, placeholders)
         }
 
-        if(title != null) {
+        if (title != null) {
             val titleText = parse(title!!, placeholders)
             var subtitleText = Component.empty() as Component
 
-            if(subtitle != null) {
+            if (subtitle != null) {
                 subtitleText = parse(subtitle!!, placeholders)
             }
 
             audience.showTitle(Title.title(titleText, subtitleText))
         }
 
-        if(actionbar != null) {
+        if (actionbar != null) {
             audience.sendActionBar(parse(actionbar!!, placeholders))
         }
 
-        if(sound != null && soundsource != null) {
+        if (sound != null && soundsource != null) {
             audience.playSound(Sound.sound(Key.key(sound!!), soundsource!!, 1f, 1f))
         }
 
