@@ -17,6 +17,7 @@
 
 package dev.fawks.careers.util.message
 
+import net.kyori.adventure.audience.Audience
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.TextDecoration
 import net.kyori.adventure.text.minimessage.MiniMessage
@@ -54,6 +55,14 @@ fun parse(text: String, vararg placeholders: Any): Component {
             .decoration(TextDecoration.ITALIC, false)
     }
     return miniMessage().deserialize(text).decoration(TextDecoration.ITALIC, false)
+}
+
+fun message(audience: Audience, message: String, placeholders: Array<out Any>) = message(audience, listOf(message), placeholders)
+
+fun message(audience: Audience, message: List<String>, placeholders: Array<out Any>) {
+    message.forEach {
+        audience.sendMessage(parse(it, placeholders))
+    }
 }
 
 fun deserialize(message: String): Component {

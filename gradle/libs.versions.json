@@ -108,6 +108,17 @@
       "version": {
         "ref": "adventure"
       }
+    },
+
+    "configurate": {
+      "group": "org.spongepowered",
+      "name": "configurate-yaml",
+      "version": "4.0.0"
+    },
+    "guava": {
+      "group": "com.google.guava",
+      "name": "guava",
+      "version": "31.0.1-jre"
     }
   }
 }
