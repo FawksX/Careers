@@ -73,3 +73,11 @@ fun deserialize(message: String): Component {
 fun miniMessage(): MiniMessage {
     return MINIMESSAGE
 }
+
+fun String.toComponent(): Component {
+    return parse(this)
+}
+
+fun String.toComponent(vararg placeholders: Any): Component {
+    return parse(this, placeholders)
+}
